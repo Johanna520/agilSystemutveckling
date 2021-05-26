@@ -1,0 +1,83 @@
+﻿
+.RenderBody {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-cont {
+    border-right: 2px black solid;
+    min-width: 350px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.sidebar-div-one {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.login {
+    bottom: 0;
+    border: 1px black solid;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px 10px !important;
+    color: black;
+    padding: 5px !important;
+}
+
+    .login:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
+.register {
+    bottom: 0;
+    right: 0;
+    border: 1px black solid;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px 10px !important;
+    color: black;
+    padding: 5px !important;
+}
+
+    .register:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
+.image {
+    width: 150px;
+    align-self: center;
+}
+
+.sidebar-div-two {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbtn {
+    color: black;
+    border: 1px black solid;
+    text-align: center;
+    margin-top: 10px !important;
+    width: 250px;
+    border-radius: 10px;
+    align-self: center;
+    padding: 5px !important;
+}
+
+    .navbtn:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
