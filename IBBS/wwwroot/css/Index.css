@@ -1,0 +1,30 @@
+﻿* {
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+    font-family: "Quicksand", sans-serif;
+}
+.btn1 {
+    border: 1px black solid;
+    text-align: center;
+    width: 200px;
+    border-radius: 15px;
+    color: black;
+}
+
+.btn1:hover {
+    background-color: #33342d;
+    color: #ef9015;
+}
+
+.btn2 {
+    border: 1px black solid;
+    text-align: center;
+    width: 200px;
+    border-radius: 15px;
+    color: black;
+}
+.btn2:hover {
+    background-color: #33342d;
+    color: #ef9015;
+}
+
+  
