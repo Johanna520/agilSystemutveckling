@@ -1,9 +1,4 @@
 ﻿
-.RenderBody {
-    position: relative;
-    width: 100%;
-}
-
 .sidebar-cont {
     border-right: 2px black solid;
     min-width: 350px;

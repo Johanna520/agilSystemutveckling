@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - IBBS</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/sidebar.css" />
     <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/sidebar.css" />
 </head>
 <body>
     <div class="main-container">
         <div class="sidebar-cont">
             <div class="sidebar-div-one">
                 <img class="image" src="/images/IBBS.png" alt="">
-                <a class="login" href="">Login</a>
-                <a class="register" href="">Register</a>
+                <a class="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                <a class="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
             </div>
             <div class="sidebar-div-two">
                 <a class="navbtn" href="">HOME</a>
