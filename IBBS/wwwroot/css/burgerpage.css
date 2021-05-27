@@ -1,0 +1,28 @@
+* {
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#heading {
+    text-align: center;
+    margin: 60px;
+}
+
+#burgercarousel {
+    margin: auto;
+    max-width: 80%;
+}
+
+#picturetext {
+    color: black;
+}
+
+#likes {
+    text-align: center;
+    margin-top: 50px;
+}
