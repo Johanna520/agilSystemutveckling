@@ -18,3 +18,59 @@
     width: 1920px;
     flex-direction: row
 }
+
+.RenderBody {
+    position: relative;
+    width: 100%;
+}
+
+.outside-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    border: 1px black solid !important;
+    width: 600px;
+    height: 300px;
+    background-color: #d6d6d6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#account {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-email {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.inputem {
+    margin-left: 37px !important;
+    position: absolute;
+    right: 0;
+}
+
+.inputpw {
+    position: absolute;
+    right: 0;
+}
+
+.input-pw {
+    width: 400px;
+    position: relative;
+    margin: 5px !important;
+}
