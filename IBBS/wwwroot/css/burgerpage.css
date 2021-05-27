@@ -1,21 +1,21 @@
-* {
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {   
     font-family: "Quicksand", sans-serif;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    
 }
 
 #heading {
-    text-align: center;
-    margin: 60px;
+    text-align: center !important;   
+    margin: 50px !important; 
 }
 
 #burgercarousel {
-    margin: auto;
-    max-width: 80%;
+    margin: auto !important;
+    max-width: 50%;
 }
 
 #picturetext {
@@ -23,6 +23,7 @@ body {
 }
 
 #likes {
-    text-align: center;
-    margin-top: 50px;
+    text-align: center !important;
+    margin: auto !important;
+    margin-top: 50px !important;
 }
