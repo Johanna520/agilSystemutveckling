@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Testttt.Data;
+using IBBS.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Model
 {
     public class Burger
     {
+        public int ID { get; set; }
         public string Burgerbun { get; set; }
         public string Beef { get; set; }
         public string Lettuce { get; set; }

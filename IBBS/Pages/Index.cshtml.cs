@@ -11,21 +11,15 @@ using IBBS.Model;
 using IBBS.Data;
 
 
-namespace Testttt.Pages
+namespace IBBS.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ApplicationDbContext context)
         {
-            _logger = logger;
-        }
 
-        private readonly IBBS.Data.ApplicationDbContext _context;
-
-        public IndexModel(TodoApp.Data.TodoDbContext context)
-        {
             _context = context;
         }
 
@@ -33,7 +27,7 @@ namespace Testttt.Pages
         public static void Burger()
         {
             List<string> burgerItem = new List<string>();
-
+        
             burgerItem.Add("Bugerbun");
             burgerItem.Add("Beef");
             burgerItem.Add("Lettuce");
@@ -45,7 +39,7 @@ namespace Testttt.Pages
 
         public void OnGet()
         {
-
+            Burgers = _context.Burgers.ToList();
         }
     }
 }
