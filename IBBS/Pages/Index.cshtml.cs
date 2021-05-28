@@ -17,6 +17,18 @@ namespace Testttt.Pages
             _logger = logger;
         }
 
+        public static void Burger()
+        {
+            List<string> burgerItem = new List<string>();
+
+            burgerItem.Add("Bugerbun");
+            burgerItem.Add("Beef");
+            burgerItem.Add("Lettuce");
+            burgerItem.Add("Tomato");
+            burgerItem.Add("Ketchup");
+
+        }
+
         public void OnGet()
         {
 
