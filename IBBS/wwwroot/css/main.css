@@ -59,18 +59,28 @@
 }
 
 .inputem {
-    margin-left: 37px !important;
-    position: absolute;
-    right: 0;
 }
 
-.inputpw {
-    position: absolute;
-    right: 0;
-}
 
 .input-pw {
     width: 400px;
     position: relative;
     margin: 5px !important;
+}
+
+.input-Firstname {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.input-Lastname {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.input {
+    position: absolute;
+    right: 0;
 }
