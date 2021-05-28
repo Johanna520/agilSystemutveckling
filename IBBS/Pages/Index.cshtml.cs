@@ -5,6 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+using IBBS.Model;
+using IBBS.Data;
+
 
 namespace Testttt.Pages
 {
@@ -17,6 +22,14 @@ namespace Testttt.Pages
             _logger = logger;
         }
 
+        private readonly IBBS.Data.ApplicationDbContext _context;
+
+        public IndexModel(TodoApp.Data.TodoDbContext context)
+        {
+            _context = context;
+        }
+
+
         public static void Burger()
         {
             List<string> burgerItem = new List<string>();
@@ -26,8 +39,9 @@ namespace Testttt.Pages
             burgerItem.Add("Lettuce");
             burgerItem.Add("Tomato");
             burgerItem.Add("Ketchup");
-
         }
+
+        public IList<Burger> Burgers { get; set; }
 
         public void OnGet()
         {

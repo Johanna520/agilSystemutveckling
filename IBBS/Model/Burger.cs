@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Testttt.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace IBBS
+namespace IBBS.Model
 {
     public class Burger
     {
@@ -12,5 +14,6 @@ namespace IBBS
         public string Lettuce { get; set; }
         public string Tomato { get; set; }
         public string Ketchup { get; set; }
+
     }
 }
