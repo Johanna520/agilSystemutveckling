@@ -9,6 +9,16 @@
         <form asp-route-returnUrl="@Model.ReturnUrl" id="account" method="post">
             <h4>Create a new account.</h4>
             <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="input-Firstname">
+                <label asp-for="Input.Firstname"></label>
+                <input asp-for="Input.Firstname" class="input inputFn" />
+                <span asp-validation-for="Input.Firstname" class="text-danger"></span>
+            </div>
+            <div class="input-Lastname">
+                <label asp-for="Input.Lastname"></label>
+                <input asp-for="Input.Lastname" class="input inputLn" />
+                <span asp-validation-for="Input.Lastname" class="text-danger"></span>
+            </div>
             <div class="input-email">
                 <label asp-for="Input.Email"></label>
                 <input asp-for="Input.Email" class="input inputem" />
