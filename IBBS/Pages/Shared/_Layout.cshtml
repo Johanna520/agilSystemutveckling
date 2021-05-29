@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,14 +20,28 @@
                 <a class="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
                 <a class="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
             </div>
-            <div class="sidebar-div-two">
-                <a class="navbtn" href="">HOME</a>
-                <a class="navbtn" href="">CREATE A HAMBURGER</a>
-                <a class="navbtn" href="">YOUR BURGERS</a>
-                <a class="navbtn" href="">DRINKS</a>
-                <a class="navbtn" href="">DESERT</a>
-                <a class="navbtn" href="">SIDE DISH</a>
-            </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="sidebar-div-two">
+                    <a class="navbtn" asp-page="/burgerpage">HOME</a>
+                    <a class="navbtn" href="">CREATE A HAMBURGER</a>
+                    <a class="navbtn" href="">YOUR BURGERS</a>
+                    <a class="navbtn" href="">DRINKS</a>
+                    <a class="navbtn" href="">DESERT</a>
+                    <a class="navbtn" href="">SIDE DISH</a>
+                </div>
+            }
+            else
+            {
+                <div class="sidebar-div-two">
+                    <a class="navbtn" asp-page="/Index">HOME</a>
+                    <a class="navbtn" href="">CREATE A HAMBURGER</a>
+                    <a class="navbtn" href="">YOUR BURGERS</a>
+                    <a class="navbtn" href="">DRINKS</a>
+                    <a class="navbtn" href="">DESERT</a>
+                    <a class="navbtn" href="">SIDE DISH</a>
+                </div>
+            }
         </div>
         <div class="RenderBody">
             @RenderBody()
