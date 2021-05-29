@@ -7,6 +7,7 @@ namespace IBBS.Models
 {
     public class Likes
     {
+        public int id { get; set; }
         public int Up { get; set; }
         public int Down { get; set; }
         public Users Users { get; set; }
