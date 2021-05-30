@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using IBBS.Data;
 using IBBS.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Pages
 {
@@ -23,26 +24,35 @@ namespace IBBS.Pages
             _userManager = userManager;
         }
 
-        public IActionResult OnGet()
+        //Hämtar en lista med komentarer, detta för att kunna visa samtliga kommentarer. Inte irkigt klar med hur
+        // den ska se ut i cshtml-koden men är "under construction". 
+
+        public IList<Comments> commentList { get; set; }
+        public async Task OnGetAsync()
         {
-            return Page();
+            commentList = await _context.Comments.ToListAsync();
         }
 
         [BindProperty]
         public Comments Comments { get; set; }
 
+
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+
+        //sparar ner commentarer och kopplar samman med userID om du är inloggad
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
+                //Claimar User-model 
+                var user = await _userManager.GetUserAsync(User);
+                Comments.User = user;
+                _context.Add(Comments);
+                await _context.SaveChangesAsync();
+
                 return Page();
             }
-
-            _context.Comments.Add(Comments);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

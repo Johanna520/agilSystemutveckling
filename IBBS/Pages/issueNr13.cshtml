@@ -6,29 +6,54 @@
     // this is a scaffolded creat-page!
 }
 
-<p>Leave a comment about this burger</p>
+
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Comments.User" class="control-label"></label>
-                <input asp-for="Comments.User" class="form-control" />
-                <span asp-validation-for="Comments.User" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comments.Comment" class="control-label"></label>
-                <input asp-for="Comments.Comment" class="form-control" />
-                <span asp-validation-for="Comments.Comment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="comments">
+
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <h>Give your feedback for this Burger</h>
+                <br />
+
+
+                <div class="theComment">
+                    <!--<label asp-for="Comments.Comment" class="control-label"></label>-->
+                    <input asp-for="Comments.Comment" class="form-control" />
+                    <span asp-validation-for="Comments.Comment" class="btnComment"></span>
+
+                </div>
+                <br />
+                <div class="comment">
+                    <input type="submit" value="Create" class="btnComment" />
+                </div>
+            </form>
+        </div>
+        <hr />
+        <hr />
     </div>
 </div>
+
+
+<!--
+@foreach (var item in Model.commentList)
+{
+
+    <p>
+        @Html.DisplayFor(modelItem => item.Comment)
+    </p>
+    <hr />
+    <br />
+
+}
+<hr />
+ -->
+
+
+
+
 
 
 @section Scripts {
