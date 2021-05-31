@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Model
 {
-    public class Burger
+    public class BurgerItems
     {
         public int ID { get; set; }
         public string Burgerbun { get; set; }

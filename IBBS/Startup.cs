@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IBBS.Data;
+using IBBS.Models;
 
 namespace IBBS
 {

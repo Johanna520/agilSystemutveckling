@@ -15,31 +15,32 @@ namespace IBBS.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly BurgerDbContext _context;
 
-        public IndexModel(ApplicationDbContext context)
+        public IndexModel(BurgerDbContext context)
         {
 
             _context = context;
         }
 
 
-        public static void Burger()
-        {
-            List<string> burgerItem = new List<string>();
-        
-            burgerItem.Add("Bugerbun");
-            burgerItem.Add("Beef");
-            burgerItem.Add("Lettuce");
-            burgerItem.Add("Tomato");
-            burgerItem.Add("Ketchup");
-        }
+        //public static void Burger()
+        //{
+        //    List<string> burgerItem = new List<string>();
+        //
+        //    burgerItem.Add("Bugerbun");
+        //    burgerItem.Add("Beef");
+        //    burgerItem.Add("Lettuce");
+        //    burgerItem.Add("Tomato");
+        //    burgerItem.Add("Ketchup");
+        //}
 
-        public IList<Burger> Burgers { get; set; }
+       
 
         public void OnGet()
         {
-            Burgers = _context.Burgers.ToList();
-        }
+        public IList<BurgerItems> BurgerItem { get; set; }
+        //BurgerItem = _context.BurgerItems.ToList();
+    }
     }
 }
