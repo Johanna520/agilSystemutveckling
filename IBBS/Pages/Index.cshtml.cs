@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.EntityFrameworkCore;
-using IBBS.Model;
+using IBBS.Models;
 using IBBS.Data;
 
 
@@ -35,12 +35,12 @@ namespace IBBS.Pages
         //    burgerItem.Add("Ketchup");
         //}
 
-       
-
-        public void OnGet()
-        {
         public IList<BurgerItems> BurgerItem { get; set; }
-        //BurgerItem = _context.BurgerItems.ToList();
-    }
+
+        public void OnGet() {
+            //BurgerItem = _context.BurgerItems.ToList();
+
+        }
+
     }
 }

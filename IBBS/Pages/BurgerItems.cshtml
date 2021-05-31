@@ -1,0 +1,58 @@
+﻿@page
+@model IBBS.Pages.BurgerItemsModel
+
+@{
+    ViewData["Title"] = "BurgerItems";
+}
+
+<h1>BurgerItems</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Burgerbun)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Beef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Lettuce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Tomato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Ketchup)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BurgerItems) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Burgerbun)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lettuce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tomato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ketchup)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

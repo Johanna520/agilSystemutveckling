@@ -17,7 +17,7 @@ namespace IBBS.Data
         {
         }
 
-        public DbSet<Model.BurgerItems> BurgerItems { get; set; }
+        public DbSet<BurgerItems> BurgerItems { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Likes> Likes { get; set; }
         public DbSet<SavedHamburgers> Burgers { get; set; }

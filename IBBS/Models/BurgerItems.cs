@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using IBBS.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace IBBS.Model
+namespace IBBS.Models
 {
     public class BurgerItems
     {
