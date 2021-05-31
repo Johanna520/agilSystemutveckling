@@ -7,14 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Models
 {
+    [Keyless]
     public class BurgerItems
     {
-        public int ID { get; set; }
         public string Burgerbun { get; set; }
-        public string Beef { get; set; }
-        public string Lettuce { get; set; }
-        public string Tomato { get; set; }
-        public string Ketchup { get; set; }
+        public string Protein { get; set; }
+        public string Vegetables { get; set; }
+        public string Sauce { get; set; }
 
     }
 }

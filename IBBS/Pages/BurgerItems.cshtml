@@ -15,16 +15,13 @@
                 @Html.DisplayNameFor(model => model.BurgerItems[0].Burgerbun)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BurgerItems[0].Beef)
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Protein)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BurgerItems[0].Lettuce)
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Vegetables)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BurgerItems[0].Tomato)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BurgerItems[0].Ketchup)
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Sauce)
             </th>
             <th></th>
         </tr>
@@ -36,21 +33,13 @@
                 @Html.DisplayFor(modelItem => item.Burgerbun)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Beef)
+                @Html.DisplayFor(modelItem => item.Protein)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Lettuce)
+                @Html.DisplayFor(modelItem => item.Vegetables)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Tomato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ketchup)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Sauce)
             </td>
         </tr>
 }

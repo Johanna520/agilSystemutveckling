@@ -38,6 +38,7 @@ namespace IBBS.Pages
         public IList<BurgerItems> BurgerItem { get; set; }
 
         public void OnGet() {
+
             //BurgerItem = _context.BurgerItems.ToList();
 
         }
