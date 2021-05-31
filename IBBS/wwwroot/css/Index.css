@@ -1,0 +1,16 @@
+﻿* {
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+    font-family: "Quicksand", sans-serif;
+}
+.btnLogIn, .btnRegister {
+    border: 1px black solid;
+    text-align: center;
+    width: 200px;
+    border-radius: 15px;
+}
+
+    .btnLogIn:hover, .btnRegister:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
