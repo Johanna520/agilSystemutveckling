@@ -39,7 +39,7 @@ namespace IBBS.Pages
 
         public void OnGet()
         {
-            Burgers = _context.Burgers.ToList();
+            var Burgerz = _context.Burgers.ToList();
         }
     }
 }
