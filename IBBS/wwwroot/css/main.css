@@ -95,8 +95,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    border: red 1px solid !important;
+    /* border: red 1px solid !important;*/
 }
+
+.save {
+    border: 1px black solid;
+    padding: 5px 10px !important;
+    border-radius: 10px;
+    color: black;
+    align-self: flex-start;
+}
+
+    .save:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
+    }
 
 .imgcont {
     border: 2px black solid;
@@ -159,6 +172,38 @@
 
     .Choicebtn:hover {
         background-color: #33342d;
-        color: #ef9015;
+        color: #ef9015 !important;
+    }
+
+.itemdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.insdecollapse {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px !important;
+}
+
+.itemcategories {
+    /* border: 1px green solid; */
+    width: 700px;
+    height: 100px;
+}
+
+.Itembtn {
+    color: black;
+    border: 1px black solid;
+    text-align: center;
+    margin: 10px 5px !important;
+    border-radius: 10px;
+    padding: 5px !important;
+}
+
+    .Itembtn:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
     }
 /*End Create Burger page*/
