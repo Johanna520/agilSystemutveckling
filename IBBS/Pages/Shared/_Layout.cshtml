@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<Models.Users> SignInManager
+@inject UserManager<Models.Users> UserManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,14 +24,18 @@
 
             @if (SignInManager.IsSignedIn(User))
             {
-                <div class="sidebar-div-two">
-                    <a class="navbtn" asp-page="/burgerpage">HOME</a>
-                    <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>
-                    <a class="navbtn" asp-page="/BurgerPage">YOUR BURGERS</a>
-                    <a class="navbtn" href="">DRINKS</a>
-                    <a class="navbtn" href="">DESERT</a>
-                    <a class="navbtn" href="">SIDE DISH</a>
-                </div>
+        <div class="sidebar-div-two">
+            <a class="navbtn" asp-page="/burgerpage">HOME</a>
+            <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>
+            <a class="navbtn" asp-page="/BurgerPage">YOUR BURGERS</a>
+            <a class="navbtn" href="">DRINKS</a>
+            <a class="navbtn" href="">DESERT</a>
+            <a class="navbtn" href="">SIDE DISH</a>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="navbtn"  id="userList" href="">USER LIST</a>
+            }
+        </div>
             }
           
             else
