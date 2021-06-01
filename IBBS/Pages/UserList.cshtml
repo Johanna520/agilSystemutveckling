@@ -1,4 +1,73 @@
 ﻿@page
 @model IBBS.Pages.UserListModel
+@using IBBS.Models
+@inject UserManager<Users> userManager
 @{
+    ViewData["Title"] = "User List";
 }
+
+<h1>Manage Users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @{
+                        var fullName = item.FirstName + " " + item.LastName;
+                        @Html.DisplayFor(i => fullName);
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @if (!await userManager.IsInRoleAsync(item, "Admin"))
+                    {
+                        <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="MakeAdmin">
+                            <button type="submit">Give Admin!</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAdmin">
+                            <button type="submit">Remove Admin!</button>
+                        </form>
+                    }
+
+                </td>
+                <td>
+                    @if (!await userManager.IsLockedOutAsync(item))
+                    {
+                        <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="BanUser">
+                            <button type="submit">Ban user!</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveBan">
+                            <button type="submit">Remove ban!</button>
+                        </form>
+                    }
+                </td>
+                <td>
+                    <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
+                        <button type="submit">Remove account!</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
