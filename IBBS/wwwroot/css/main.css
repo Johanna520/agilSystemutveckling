@@ -1,0 +1,224 @@
+﻿/*Start Global settings*/
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    max-height: 100vh;
+    text-decoration: none !important;
+    font-family: "Quicksand", sans-serif !important;
+    font-size: 19px;
+}
+/*End Global settings*/
+
+.logoutbtn {
+    justify-content: center;
+    align-content: center;
+    color: black;
+    border: 1px black solid;
+    border-radius: 10px;
+    padding: 5px 10px !important;
+    background-color: white;
+}
+
+    .logoutbtn:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
+/**/
+.main-container {
+    height: 100vh;
+    display: flex;
+}
+
+.RenderBody {
+    position: relative;
+    width: 100%;
+}
+
+.outside-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    border: 1px black solid !important;
+    width: 600px;
+    height: 300px;
+    background-color: #d6d6d6;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#account {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-email {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.inputem {
+}
+
+
+.input-pw {
+    width: 400px;
+    position: relative;
+    margin: 5px !important;
+}
+
+
+.input-Firstname {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.input-Lastname {
+    width: 400px;
+    margin: 5px !important;
+    position: relative;
+}
+
+.input {
+    position: absolute;
+    right: 0;
+}
+
+/*Start Create Burger page*/
+.burger-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* border: red 1px solid !important;*/
+}
+
+.save {
+    border: 1px black solid;
+    padding: 5px 10px !important;
+    border-radius: 10px;
+    color: black;
+    align-self: flex-start;
+}
+
+    .save:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
+    }
+
+.imgcont {
+    border: 2px black solid;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(211, 211, 211);
+}
+
+.Burgerimg {
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    align-self: center;
+    display: none;
+}
+
+.BunTop {
+    top: 70px;
+}
+
+.sallad {
+    top: 170px;
+}
+
+.tomato {
+    top: 195px;
+}
+
+.BunBottom {
+    bottom: 150px;
+}
+
+.foodselector {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px !important;
+    padding: 5px !important;
+}
+
+.burgermaker {
+    /* border: 2px black solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Choicebtn {
+    color: black;
+    border: 1px black solid;
+    text-align: center;
+    margin-top: 10px !important;
+    border-radius: 10px;
+    padding: 5px !important;
+}
+
+    .Choicebtn:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
+    }
+
+.itemdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.insdecollapse {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px !important;
+}
+
+.itemcategories {
+    /* border: 1px green solid; */
+    width: 700px;
+    height: 100px;
+}
+
+.Itembtn {
+    color: black;
+    border: 1px black solid;
+    text-align: center;
+    margin: 10px 5px !important;
+    border-radius: 10px;
+    padding: 5px !important;
+}
+
+    .Itembtn:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
+    }
+/*End Create Burger page*/
