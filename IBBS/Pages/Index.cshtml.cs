@@ -23,23 +23,7 @@ namespace IBBS.Pages
             _context = context;
         }
 
-
-        //public static void Burger()
-        //{
-        //    List<string> burgerItem = new List<string>();
-        //
-        //    burgerItem.Add("Bugerbun");
-        //    burgerItem.Add("Beef");
-        //    burgerItem.Add("Lettuce");
-        //    burgerItem.Add("Tomato");
-        //    burgerItem.Add("Ketchup");
-        //}
-
-        //public IList<BurgerItems> BurgerItem { get; set; }
-
         public void OnGet() {
-
-            //BurgerItem = _context.BurgerItems.ToList();
 
         }
 

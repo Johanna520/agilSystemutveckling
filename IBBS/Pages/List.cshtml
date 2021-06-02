@@ -7,9 +7,6 @@
 
 <h1>List</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -71,68 +68,69 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.BurgerItems) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avocado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bacon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BottomBunDark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TopBunDark)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cheese)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chicken)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cucumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hahalloumi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ketchup)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mayo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Onion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalladBunBottom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SalladBunTop)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TopLightBun)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sallad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tomato)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Beef)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BottomLightBun)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.BurgerItems)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Avocado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bacon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BottomBunDark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TopBunDark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cheese)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chicken)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cucumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hahalloumi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ketchup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mayo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Onion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalladBunBottom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalladBunTop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TopLightBun)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sallad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tomato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beef)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BottomLightBun)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
