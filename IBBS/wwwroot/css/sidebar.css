@@ -50,6 +50,24 @@
         color: #ef9015;
     }
 
+.logout {
+    bottom: 0;
+    border: 1px black solid;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px 10px !important;
+    color: black;
+    padding: 5px !important;
+    align-self: center;
+}
+
+    .logout:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
 .image {
     width: 150px;
     align-self: center;

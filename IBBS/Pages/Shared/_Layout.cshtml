@@ -11,11 +11,28 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/sidebar.css" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/css/Index.css" />
+    <link rel="stylesheet" href="~/css/burgerpage.css" />
 </head>
 <body>
     <div class="main-container">
         <div class="sidebar-cont">
+
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="sidebar-div-one">
+                    <img class="image" src="/images/IBBS.png" alt="">
+                    <a class="logout" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+                </div>
+                <div class="sidebar-div-two">
+                    <a class="navbtn" asp-page="/burgerpage">HOME</a>
+                    <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>
+                    <a class="navbtn" asp-page="/BurgerPage">YOUR BURGERS</a>
+                    <a class="navbtn" href="">DRINKS</a>
+                    <a class="navbtn" href="">DESERT</a>
+                    <a class="navbtn" href="">SIDE DISH</a>
+                </div>
             <div class="sidebar-div-one">
                 <img class="image" src="/images/IBBS.png" alt="">
                 <a class="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
@@ -37,9 +54,14 @@
             }
         </div>
             }
-          
+
             else
             {
+                <div class="sidebar-div-one">
+                    <img class="image" src="/images/IBBS.png" alt="">
+                    <a class="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    <a class="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                </div>
                 <div class="sidebar-div-two">
                     <a class="navbtn" asp-page="/Index">HOME</a>
                     <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>

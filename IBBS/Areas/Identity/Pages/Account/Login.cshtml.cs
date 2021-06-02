@@ -44,8 +44,9 @@ namespace IBBS.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            //[EmailAddress]
+            [EmailAddress]
             public string Email { get; set; }
+
 
             [Required]
             [DataType(DataType.Password)]
@@ -84,13 +85,18 @@ namespace IBBS.Areas.Identity.Pages.Account
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
 
                 var user = await _userManager.FindByEmailAsync(Input.Email);
-
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    return Page();
+                }
                 var result = await _signInManager.PasswordSignInAsync(user, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    return RedirectToPage("/BurgerPage");
                 }
                 if (result.RequiresTwoFactor)
                 {

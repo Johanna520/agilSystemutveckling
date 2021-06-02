@@ -24,7 +24,7 @@ namespace IBBS.Data
         public async Task SeedAsync(UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
         {
 
-            //await this.Database.EnsureDeletedAsync(); //Use this to reset the database
+            await this.Database.EnsureDeletedAsync(); //Use this to reset the database
 
             bool isCreated = await this.Database.EnsureCreatedAsync();
             if (!isCreated)
@@ -47,8 +47,8 @@ namespace IBBS.Data
                 PhoneNumberConfirmed = true,
             };
 
-            await userManager.CreateAsync(admin, "Admin_1"); //Assign password
-            await userManager.CreateAsync(user, "User_1");
+            await userManager.CreateAsync(admin, "admin"); //Assign password
+            await userManager.CreateAsync(user, "user1");
 
             var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
             var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
