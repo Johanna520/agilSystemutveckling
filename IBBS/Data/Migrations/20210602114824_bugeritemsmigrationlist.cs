@@ -2,7 +2,7 @@
 
 namespace IBBS.Data.Migrations
 {
-    public partial class burgerItemsForAllYao : Migration
+    public partial class bugeritemsmigrationlist : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

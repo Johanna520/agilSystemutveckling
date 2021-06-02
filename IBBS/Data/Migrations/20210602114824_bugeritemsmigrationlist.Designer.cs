@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IBBS.Data.Migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210602095434_burgerItemsListMigration")]
-    partial class burgerItemsListMigration
+    [Migration("20210602114824_bugeritemsmigrationlist")]
+    partial class bugeritemsmigrationlist
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
