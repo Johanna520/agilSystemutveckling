@@ -7,7 +7,7 @@
 <div id="heading" class="container-sm">
     <h1>Burgers</h1>
 </div>
-<div id="burgercarousel" class="carousel slide" data-ride="carousel">
+<div id="burgercarousel" class="carousel slide" data-interval="false" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#burgercarousel" data-slide-to="0" class="active"></li>
         <li data-target="#burgercarousel" data-slide-to="1"></li>
@@ -45,10 +45,12 @@
 <div id="likes" class="container">
     <div class="row justify-content-md-center">
         <div class="col-lg-2">
-            <i class="far fa-thumbs-up"></i>
+            <span id="Likes">420</span>
+            <img class="thumbspic thumbup" id="thumbsup" src="~/images/Tummeup.png" />
         </div>
         <div class="col-lg-2">
-            <i class="far fa-thumbs-down"></i>
+            <img class="thumbspic thumbdown" id="thumbsdown" src="~/images/Tummener.png" />
+            <span id="Dislike">69</span>
         </div>
     </div>
 </div>
