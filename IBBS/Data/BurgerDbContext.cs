@@ -47,8 +47,8 @@ namespace IBBS.Data
                 PhoneNumberConfirmed = true,
             };
 
-            await userManager.CreateAsync(admin, "Admin_1"); //Assign password
-            await userManager.CreateAsync(user, "User_1");
+            await userManager.CreateAsync(admin, "admin"); //Assign password
+            await userManager.CreateAsync(user, "user1");
 
             var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
             var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
