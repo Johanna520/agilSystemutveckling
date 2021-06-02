@@ -9,65 +9,62 @@
 <h1>Manage Users</h1>
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Email
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Users)
-        {
-            <tr>
-                <td>
+    <head>
+        <div class="headerDiv">
+            <h2 id="name">Name</h2>
+            <h2 id="email">Email</h2>
+        </div>
+    </head>
+    <body>
+        <div class="bodyDiv">
+            @foreach (var item in Model.Users)
+            {
+
+                <div class="userInfo" id="userName">
                     @{
                         var fullName = item.FirstName + " " + item.LastName;
                         @Html.DisplayFor(i => fullName);
                     }
-                </td>
-                <td>
+                </div>
+                <div class="userInfo" id="userEmail">
                     @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
+                </div>
+                <div class="userInfo" id="giveAdminbtn">
                     @if (!await userManager.IsInRoleAsync(item, "Admin"))
                     {
                         <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="MakeAdmin">
-                            <button type="submit">Give Admin!</button>
+                            <button class="myButton" type="submit">Give Admin!</button>
                         </form>
                     }
                     else
                     {
                         <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAdmin">
-                            <button type="submit">Remove Admin!</button>
+                            <button class="myButton" type="submit">Remove Admin!</button>
                         </form>
                     }
 
-                </td>
-                <td>
+                </div>
+                <div class="userInfo" id="banbtn">
                     @if (!await userManager.IsLockedOutAsync(item))
                     {
                         <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="BanUser">
-                            <button type="submit">Ban user!</button>
+                            <button class="myButton" type="submit">Ban user!</button>
                         </form>
                     }
                     else
                     {
                         <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveBan">
-                            <button type="submit">Remove ban!</button>
+                            <button class="myButton" type="submit">Remove ban!</button>
                         </form>
                     }
-                </td>
-                <td>
+                </div>
+                <div class="userInfo" id="removeAccountbtn">
                     <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
-                        <button type="submit">Remove account!</button>
+                        <button class="myButton" type="submit">Remove account!</button>
                     </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                </div>
+                <br />
+                <br />
+            }
+        </div>
+    </body>

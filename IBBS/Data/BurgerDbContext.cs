@@ -24,7 +24,7 @@ namespace IBBS.Data
         public async Task SeedAsync(UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
         {
 
-            await this.Database.EnsureDeletedAsync(); //Use this to reset the database
+            //await this.Database.EnsureDeletedAsync(); //Use this to reset the database
 
             bool isCreated = await this.Database.EnsureCreatedAsync();
             if (!isCreated)
@@ -34,6 +34,8 @@ namespace IBBS.Data
 
             Users admin = new Users()  //Put in user info
             {
+                FirstName = "Admin",
+                LastName = "Adminsson",
                 UserName = "Admin",
                 Email = "Admin@hotmail.com",
                 EmailConfirmed = true,
@@ -41,6 +43,8 @@ namespace IBBS.Data
             };
             Users user = new Users()
             {
+                FirstName = "User",
+                LastName = "Usersson",
                 UserName = "User",
                 Email = "User@hotmail.com",
                 EmailConfirmed = true,
