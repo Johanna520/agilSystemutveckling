@@ -35,7 +35,7 @@ namespace IBBS.Pages
         //    burgerItem.Add("Ketchup");
         //}
 
-        public IList<BurgerItems> BurgerItem { get; set; }
+        //public IList<BurgerItems> BurgerItem { get; set; }
 
         public void OnGet() {
 

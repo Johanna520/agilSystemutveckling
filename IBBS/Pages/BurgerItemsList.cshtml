@@ -1,0 +1,138 @@
+﻿@page
+@model IBBS.Pages.BurgerItemsListModel
+
+@{
+    ViewData["Title"] = "BurgerItemsList";
+}
+
+<h1>BurgerItemsList</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Avocado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Bacon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].BottomBunDark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].TopBunDark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Cheese)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Chicken)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Cucumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Hahalloumi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Ketchup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Mayo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Onion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].SalladBunBottom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].SalladBunTop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].TopLightBun)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Sallad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Tomato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].Beef)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BurgerItems[0].BottomLightBun)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BurgerItems) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avocado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bacon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BottomBunDark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopBunDark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cheese)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chicken)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cucumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hahalloumi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ketchup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mayo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Onion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalladBunBottom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalladBunTop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopLightBun)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sallad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tomato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BottomLightBun)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IBBS.Data.Migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210531132526_BurgerItemsWithNoId")]
-    partial class BurgerItemsWithNoId
+    [Migration("20210602094925_burgerItemsForAllYao")]
+    partial class burgerItemsForAllYao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,17 +23,59 @@ namespace IBBS.Data.Migrations
 
             modelBuilder.Entity("IBBS.Models.BurgerItems", b =>
                 {
-                    b.Property<string>("Burgerbun")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Avocado")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Protein")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Bacon")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Sauce")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Beef")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Vegetables")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("BottomBunDark")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BottomLightBun")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cheese")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Chicken")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cucumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Hahalloumi")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Ketchup")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Mayo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Onion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Sallad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SalladBunBottom")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SalladBunTop")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Tomato")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopBunDark")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TopLightBun")
+                        .HasColumnType("int");
 
                     b.ToTable("BurgerItems");
                 });

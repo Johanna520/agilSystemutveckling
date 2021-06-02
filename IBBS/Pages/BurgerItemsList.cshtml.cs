@@ -10,11 +10,11 @@ using IBBS.Models;
 
 namespace IBBS.Pages
 {
-    public class BurgerItemsModel : PageModel
+    public class BurgerItemsListModel : PageModel
     {
         private readonly IBBS.Data.BurgerDbContext _context;
 
-        public BurgerItemsModel(IBBS.Data.BurgerDbContext context)
+        public BurgerItemsListModel(IBBS.Data.BurgerDbContext context)
         {
             _context = context;
         }
