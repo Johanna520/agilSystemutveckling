@@ -11,7 +11,7 @@ namespace IBBS.Models
         public List<Likes> Likes { get; set; }
         public Users User { get; set; }
         public List<Comments> Comments { get; set; }
-        public List<SavedHamburgers> Ingredients { get; set; }
+        public List<UseIngredient> UseIngredients { get; set; }
         // Vet inte om det är lösningen men vi behöver ju något som håller koll på hur hamburgaren faktiskt ser ut
     }
 }

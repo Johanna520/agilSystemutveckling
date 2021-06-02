@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
 </head>
 <body>
+    <ol>
+        @foreach (var item in Model.Ingredients)
+        {
+            <li>@item.Name</li>
+        }
+    </ol>
     <div id="heading" class="container-sm">
         <h1>Burgers</h1>
     </div>
