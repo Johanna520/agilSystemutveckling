@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Pages
 {
+
+    [Authorize]
     public class BurgerPageModel : PageModel
     {
         private readonly BurgerDbContext _context;

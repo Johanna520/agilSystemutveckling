@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
-* {   
-    font-family: "Quicksand", sans-serif;
-}
-
-body {
-    
-}
-
 #heading {
-    text-align: center !important;   
-    margin: 50px !important; 
+    text-align: center !important;
+    margin: 50px !important;
 }
 
 #burgercarousel {
@@ -26,4 +16,30 @@ body {
     text-align: center !important;
     margin: auto !important;
     margin-top: 50px !important;
+}
+
+.thumbspic {
+    width: 50%;
+    cursor: pointer;
+}
+
+#Likes {
+    color: green;
+    font-size: 24px;
+    margin: 0 10px !important;
+    align-self: center;
+}
+
+#Dislike {
+    color: red;
+    font-size: 24px;
+    margin: 0 10px !important;
+    align-self: center;
+}
+
+.col-lg-2 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 90px !important;
 }
