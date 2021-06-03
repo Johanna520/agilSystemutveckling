@@ -6,15 +6,13 @@ let names = Array.from(name);
 
 
 document.querySelectorAll(".removeFunction").forEach(item => {
+    let hej = item;
+    item.addEventListener("submit", function (e) {
 
-    item.addEventListener("submit", function (evt) {
-
-        let test = document.getElementById("test").value;
         let r = confirm("Are you sure you want to delete this account? \n" + names[i].value);
         if (r == false) {
-            evt.preventDefault();
+            e.preventDefault();
         }
-        i++;
     })
 
 })

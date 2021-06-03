@@ -24,7 +24,7 @@ namespace IBBS.Data
         public async Task SeedAsync(UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
         {
 
-            await this.Database.EnsureDeletedAsync(); //Use this to reset the database
+            await this.Database.EnsureDeletedAsync(); //Use this to reset the database or comment it out
 
             bool isCreated = await this.Database.EnsureCreatedAsync();
             if (!isCreated)
@@ -57,6 +57,16 @@ namespace IBBS.Data
             await userManager.CreateAsync(admin, "admin"); //Assign password
             await userManager.CreateAsync(user, "user1");
 
+
+            var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
+            var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
+
+
+            await userManager.AddToRoleAsync(adminRole, "Admin"); //Assign roles
+            await userManager.AddToRoleAsync(userRole, "User");
+
+
+
             for (int i = 0; i < 10; i++)
             {
 
@@ -65,23 +75,18 @@ namespace IBBS.Data
                     FirstName = "User" + i,
                     LastName = "Usersson" + i,
                     UserName = "User" + i,
-                    Email = "User"+i+"@hotmail.com",
+                    Email = "User" + i + "@hotmail.com",
                     EmailConfirmed = true,
                     PhoneNumberConfirmed = true,
                 };
-                await userManager.CreateAsync(users, "user"+i);
+                await userManager.CreateAsync(users, "user" + i);
 
                 var userRoles = await Users.Where(u => u.Email == "User" + i + "@hotmail.com").FirstOrDefaultAsync();
 
                 await userManager.AddToRoleAsync(userRoles, "User");
             }
 
-            var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
-            var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
 
-
-            await userManager.AddToRoleAsync(adminRole, "Admin"); //Assign roles
-            await userManager.AddToRoleAsync(userRole, "User");
 
             await SaveChangesAsync();
 
