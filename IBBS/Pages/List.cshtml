@@ -1,0 +1,16 @@
+﻿@page
+@model IBBS.Pages.ListModel
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<ol>
+    @foreach (var item in Model.Ingredients)
+    {
+        <li>@item.Name</li>
+    }
+</ol>
+
