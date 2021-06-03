@@ -32,6 +32,8 @@ namespace IBBS.Data
                 return;
             }
 
+
+
             Users admin = new Users()  //Put in user info
             {
                 UserName = "Admin",
