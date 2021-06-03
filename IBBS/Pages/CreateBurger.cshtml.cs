@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IBBS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
 namespace IBBS.Pages
 {
+    [Authorize]
     public class CreateBurgerModel : PageModel
     {
         private readonly IBBS.Data.BurgerDbContext _context;
