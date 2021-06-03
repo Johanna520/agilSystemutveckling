@@ -59,8 +59,8 @@
                     }
                 </div>
                 <div class="userInfo" id="removeAccountbtn">
-                    <form method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
-                        <button class="myButton" type="submit">Remove account!</button>
+                    <form class="removeFunction" id="removebtn" method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
+                        <button class="myButton testar" id="test"  type="submit" value="@item.Email">Remove account!</button>
                     </form>
                 </div>
                 <br />
