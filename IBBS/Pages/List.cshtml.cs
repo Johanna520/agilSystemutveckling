@@ -19,11 +19,11 @@ namespace IBBS.Pages
             _context = context;
         }
 
-        public IList<BurgerItems> BurgerItems { get;set; }
+        public List<Ingredient> Ingredients { get; set; }
 
         public async Task OnGetAsync()
         {
-            BurgerItems = await _context.BurgerItems.ToListAsync();
+            Ingredients = await _context.Ingredients.ToListAsync();
         }
     }
 }
