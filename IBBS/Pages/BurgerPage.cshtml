@@ -1,19 +1,9 @@
 ﻿@page
 @model IBBS.Pages.BurgerPageModel
 @{
-    ViewData["Title"] = "Burgers";
+    
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] </title>
-    <link rel="stylesheet" href="~/css/burgerpage.css" />
-  
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-</head>
-<body>
+
     <div id="heading" class="container-sm">
         <h1>Burgers</h1>
     </div>
@@ -65,61 +55,39 @@
 
     <br />
     <br />
+    <table class"table">
+        <thead>
+            <tr>
+                <td>
+                    Comments
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.commentList)
+            {
+                <tr>
+                    <td>
+                        @item.Comment
+                    </td>
+                </tr>
+            }
+            <tr>
 
-    <hr />
-    <div class="comments">
 
-        <div class="row">
-            <div class="col-md-4">
                 <form method="post">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <h>Give your feedback for this Burger</h>
-                    <br />
-
-
                     <div class="theComment">
-                        <!--<label asp-for="Comments.Comment" class="control-label"></label>-->
-                        <input asp-for="Comments.Comment" class="form-control" />
-                        <span asp-validation-for="Comments.Comment" class="btnComment"></span>
+                        <label asp-for="newComment.Comment" class="control-label"></label>
+                        <input asp-for="newComment.Comment" class="form-control" />
+                        <span asp-validation-for="newComment.Comment" class="btnComment"></span>
 
                     </div>
                     <br />
                     <div class="comment">
                         <input type="submit" value="Create" class="btnComment" />
                     </div>
+
                 </form>
-            </div>
-            <hr />
-            <hr />
-        </div>
-    </div>
-
-
-    <!--
-    @foreach (var item in Model.commentList)
-    {
-
-        <p>
-            @Html.DisplayFor(modelItem => item.Comment)
-        </p>
-        <hr />
-        <br />
-
-    }
-    <hr />
-     -->
-
-
-
-
-
-
-
-
-</body>
-</html>
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+            </tr>
+        </tbody>
+    </table>

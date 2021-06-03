@@ -24,33 +24,32 @@ namespace IBBS.Pages
 
         //Hämtar en lista med komentarer, detta för att kunna visa samtliga kommentarer. Inte irkigt klar med hur
         // den ska se ut i cshtml-koden men är "under construction". 
-
-        public IList<Comments> commentList { get; set; }
-        public async Task OnGetAsync()
+        public List<Comments> commentList { get; set; }
+        public async Task OnGetAsync(int? id)
         {
+            if (id != null)
+            {
+                var commentList = await _context.Comments.FindAsync(id);
+
+
+                _context.Update(commentList);
+                await _context.SaveChangesAsync();
+            }
+
             commentList = await _context.Comments.ToListAsync();
         }
 
         [BindProperty]
-        public Comments Comments { get; set; }
-
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-
-        //sparar ner commentarer och kopplar samman med userID om du är inloggad
+        public Comments newComment { get; set; }
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
-            {
-                //Claimar User-model 
-                var user = await _userManager.GetUserAsync(User);
-                Comments.User = user;
-                _context.Add(Comments);
-                await _context.SaveChangesAsync();
 
-                return Page();
-            }
-            return RedirectToPage("/Index");
+            newComment.User = await _context.Users.FirstOrDefaultAsync();
+
+            await _context.AddAsync(newComment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage();
         }
     }
 }
