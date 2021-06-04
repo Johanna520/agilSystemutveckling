@@ -245,7 +245,7 @@
 
 .bodyDiv {
     position: relative;
-    top: 25%;
+    top: 20%;
 }
 
 .myButton {
@@ -289,7 +289,16 @@
 
 #removeAccountbtn {
     left: 80%;
-    width: 13%
+    width: 13%;
+}
+
+#removeAccBtn{
+    background-color: red;
+}
+
+#removeAccBtn:hover {
+    background-color: #33342d;
+    color: #ef9015 !important;
 }
 
 /*End UserList page*/

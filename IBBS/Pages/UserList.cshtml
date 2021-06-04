@@ -17,6 +17,7 @@
     </head>
     <body>
         <div class="bodyDiv">
+            @{int i = 0; }
             @foreach (var item in Model.Users)
             {
 
@@ -59,12 +60,16 @@
                     }
                 </div>
                 <div class="userInfo" id="removeAccountbtn">
-                    <form class="removeFunction" id="removebtn" method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
-                        <button class="myButton testar" id="test"  type="submit" value="@item.Email">Remove account!</button>
+                    <form class="removeFunction" id="removebtn @i" method="post" asp-route-UserName="@item.UserName" asp-page-handler="RemoveAccount">
+                        <button class="myButton" id="removeAccBtn" type="submit" value="@item.Email, @i">Remove account!</button>
                     </form>
                 </div>
                 <br />
                 <br />
+
+                i++;
+
+
             }
         </div>
     </body>
