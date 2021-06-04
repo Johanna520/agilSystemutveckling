@@ -17,6 +17,8 @@ namespace IBBS.Data
         {
         }
 
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<BurgerItems> BurgerItems { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Likes> Likes { get; set; }
         public DbSet<SavedHamburgers> Burgers { get; set; }
@@ -57,7 +59,6 @@ namespace IBBS.Data
             await userManager.CreateAsync(admin, "admin"); //Assign password
             await userManager.CreateAsync(user, "user1");
 
-
             var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
             var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
 
@@ -92,5 +93,82 @@ namespace IBBS.Data
 
         }
 
+        public async Task AddBurgerItems()
+        {
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Avocado"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Bacon"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "BottomBunDark"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "TopBunDark"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Cheese"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Chicken"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Cucumber"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+               Name = "Hahalloumi"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+               Name = "Ketchup"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Mayo"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+               Name = "Onion"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+               Name = "SalladBunBottom"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+               Name = "SalladBunTop"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "TopLightBun"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Sallad"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Tomato"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "Beef"
+            });
+            Ingredients.Add(new Ingredient()
+            {
+                Name = "BottomLightBun"
+            });
+            await SaveChangesAsync();
+        }
+        
     }
 }
