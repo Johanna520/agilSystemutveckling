@@ -19,6 +19,7 @@
         <div class="sidebar-cont">
 
 
+
             @if (SignInManager.IsSignedIn(User))
             {
                 <div class="sidebar-div-one">
@@ -32,6 +33,10 @@
                     <a class="navbtn" href="">DRINKS</a>
                     <a class="navbtn" href="">DESERT</a>
                     <a class="navbtn" href="">SIDE DISH</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="navbtn" id="userList" href="/UserList">USER LIST</a>
+                    }
                 </div>
             }
 
@@ -58,6 +63,7 @@
         </div>
     </div>
     <script src="~/js/burger.js"></script>
+    <script src="~/js/UserList.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
