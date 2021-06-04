@@ -1,7 +1,15 @@
-﻿.card-container {
+﻿.drink-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-container {
     width: 250px;
     height: 350px;
     perspective: 1000px;
+
 }
 .drinkImg {
     width: 80%;
