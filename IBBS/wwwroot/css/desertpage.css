@@ -2,3 +2,19 @@
     text-align: center !important;
     margin: 50px !important;
 }
+
+#desert-card img {
+    margin:auto !important;
+    width: 250px !important;
+    height: 250px !important;
+}
+
+#desert-body {
+    margin: auto !important;
+    width: 250px !important;
+}
+
+#desert-card {
+    border: none !important;
+    margin-left: 270px !important;
+}
