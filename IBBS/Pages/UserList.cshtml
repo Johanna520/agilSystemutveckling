@@ -9,6 +9,16 @@
 <h1>Manage Users</h1>
 
     <body>
+
+        <form method="get">
+            <div class="searchBar">
+                <input class="searchInput" asp-for="SearchTerm"/>
+                <div>
+                    <button type="submit" class="myButton searchBtn">Search</button>
+                </div>
+            </div>
+        </form>
+
         <div class="headerDiv">
             <h2 id="name">Name</h2>
             <h2 id="email">Email</h2>

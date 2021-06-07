@@ -25,12 +25,23 @@ namespace IBBS.Pages
 
 
         public IList<Users> Users { get; set; }
+        [BindProperty(SupportsGet=true)]
+        public string SearchTerm { get; set; }
 
 
 
         public async Task OnGetAsync()
         {
-            Users = await _context.Users.ToListAsync();
+            if (string.IsNullOrEmpty(SearchTerm))
+            {
+                Users = await _context.Users.ToListAsync();
+            }
+            else
+            {
+                Users = await _context.Users.Where(u => (u.FirstName + " " + u.LastName).Contains(SearchTerm) ||
+                                                         u.Email.Contains(SearchTerm)).ToListAsync();
+            }
+            
         }
 
         public async Task<IActionResult> OnPostMakeAdminAsync(string UserName)

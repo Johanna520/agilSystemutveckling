@@ -301,4 +301,8 @@
     color: #ef9015 !important;
 }
 
+.searchBtn{
+    width: 50%;
+}
+
 /*End UserList page*/
