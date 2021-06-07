@@ -228,3 +228,83 @@
         color: #ef9015 !important;
     }
 /*End Create Burger page*/
+
+/*Start UserList page*/
+.headerDiv{
+    position:relative;
+    top: 7%;
+}
+
+.headerDiv > h2{
+    display: inline-block;
+}
+
+#name {
+    position: absolute;
+    left: 5%;
+}
+
+#email {
+    position: absolute;
+    left: 25%;
+}
+
+.bodyDiv {
+    position: relative;
+    top: 20%;
+}
+
+.myButton {
+    border: 1px black solid;
+    text-align: center;
+    width: 100%;
+    border-radius: 15px;
+}
+
+    .myButton:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
+.userInfo{
+    display: inline-block;
+    position:absolute;
+}
+
+#userName{
+    left: 5%;
+    width: 20%;
+    word-wrap: break-word;
+}
+
+#userEmail {
+    left: 25%;
+    width: 20%;
+    word-wrap: break-word;
+}
+
+#giveAdminbtn{
+    left: 50%;
+    width: 13%
+}
+
+#banbtn {
+    left: 65%;
+    width: 13%
+}
+
+#removeAccountbtn {
+    left: 80%;
+    width: 13%;
+}
+
+#removeAccBtn{
+    background-color: red;
+}
+
+#removeAccBtn:hover {
+    background-color: #33342d;
+    color: #ef9015 !important;
+}
+
+/*End UserList page*/
