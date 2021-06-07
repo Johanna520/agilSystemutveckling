@@ -253,6 +253,7 @@
     text-align: center;
     width: 100%;
     border-radius: 15px;
+    outline: none;
 }
 
     .myButton:hover {
@@ -301,8 +302,28 @@
     color: #ef9015 !important;
 }
 
-.searchBtn{
-    width: 50%;
+.searchDiv{
+    position:relative;
+}
+
+.searchBtn {
+    width: 12%;
+}
+
+.searchBar{
+    position:absolute;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    top: 8%;
+
+}
+
+.searchInput {
+    width: 25%;
+    border-radius: 15px;
+    outline: none;
 }
 
 /*End UserList page*/
