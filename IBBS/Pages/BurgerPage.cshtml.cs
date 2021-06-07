@@ -10,7 +10,8 @@ namespace IBBS.Pages
     public class BurgerPageModel : PageModel
     {
         public void OnGet()
-        {
+        {  
+
         }
     }
 }
