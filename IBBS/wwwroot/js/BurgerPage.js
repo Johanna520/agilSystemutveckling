@@ -10,12 +10,15 @@ Thumbsup.addEventListener("click", function () {
         Likes.innerHTML = Like;
         disliked = false;
         Liked = true;
-        PostLike();
+
         if (Dislike <= 0) {
+            PostLike();
             return Dislike;
         } else {
             Dislike -= 1;
             Dislikes.innerHTML = Dislike;
+
+            PostLike();
         }
     } else {
         Like -= 1;
@@ -34,18 +37,20 @@ Thumbsdown.addEventListener("click", function () {
         Dislikes.innerHTML = Dislike;
         Liked = false;
         disliked = true;
-        PostLike();
         if (Like <= 0) {
+            PostLike();
             return Like;
         } else {
             Like -= 1;
             Likes.innerHTML = Like;
+            PostLike();
         }
     } else {
         Dislike -= 1;
         Dislikes.innerHTML = Dislike;
         disliked = false;
     }
+
 });
 
 
