@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace IBBS.Data.Migrations
+namespace IBBS.Data.migrations
 {
-    public partial class namechangeitemsforburger : Migration
+    public partial class migraioninit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
