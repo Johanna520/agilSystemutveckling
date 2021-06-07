@@ -4,8 +4,6 @@
     string dotpng = ".png";
 }
 <div id="imageslist">
-    
-
         @foreach (var item in Model.Ingredients)
         {
             string imageURL = item.Name;
@@ -13,6 +11,5 @@
             <img src=~/images//Burger/@{@imageURL}@dotpng alt=@item.Name/>
 
         }
-
 </div>
     
