@@ -17,7 +17,7 @@ namespace IBBS.Models
         public int Cheese { get; set; }
         public int Chicken { get; set; }
         public int Cucumber { get; set; }
-        public int Hahalloumi { get; set; }
+        public int Hallumi { get; set; }
         public int Ketchup { get; set; }
         public int Mayo { get; set; }
         public int Onion { get; set; }
