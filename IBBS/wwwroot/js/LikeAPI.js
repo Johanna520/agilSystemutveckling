@@ -5,7 +5,24 @@ async function LikeApi() {
     const response = await fetch(url);
     let Data = await response.json();
 
-    return Data;
+    return console.log(Data);
 }
 
-LikeApi().then((Data) => alert(Data));
+function PostLike() {
+    let _data = {
+        Like: Like,
+        Dislike: Dislike,
+    };
+    fetch("https://localhost:44363/api/Like", {
+        method: "POST",
+        body: JSON.stringify(_data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+    })
+        .then((response) => response.json())
+        .then((_data) => {
+            console.log("Success:", _data);
+        })
+        .catch((error) => {
+            console.error("Error:", _data);
+        });
+}

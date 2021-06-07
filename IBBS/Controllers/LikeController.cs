@@ -26,5 +26,15 @@ namespace IBBS.Controllers
             return await _context.Likes.ToListAsync();
         }
 
+        [HttpPost]
+        public Likes PostLikes(Likes likes)
+        {
+            _context.Add(likes);
+            _context.SaveChanges();
+            return likes;
+        }
+
+
     }
 }
+

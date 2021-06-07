@@ -23,6 +23,7 @@ namespace IBBS.Data
         public DbSet<Likes> Likes { get; set; }
         public DbSet<SavedHamburgers> Burgers { get; set; }
 
+
         public async Task SeedAsync(UserManager<Users> userManager, RoleManager<IdentityRole> roleManager)
         {
 
@@ -65,6 +66,7 @@ namespace IBBS.Data
 
             await AddBurgerItems();
 
+
             await SaveChangesAsync();
 
         }
@@ -101,11 +103,11 @@ namespace IBBS.Data
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "Hahalloumi"
+                Name = "Hahalloumi"
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "Ketchup"
+                Name = "Ketchup"
             });
             Ingredients.Add(new Ingredient()
             {
@@ -113,15 +115,15 @@ namespace IBBS.Data
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "Onion"
+                Name = "Onion"
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "SalladBunBottom"
+                Name = "SalladBunBottom"
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "SalladBunTop"
+                Name = "SalladBunTop"
             });
             Ingredients.Add(new Ingredient()
             {
@@ -145,6 +147,6 @@ namespace IBBS.Data
             });
             await SaveChangesAsync();
         }
-        
+
     }
 }

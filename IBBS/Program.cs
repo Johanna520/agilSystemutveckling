@@ -1,3 +1,4 @@
+using IBBS.Controllers;
 using IBBS.Data;
 using IBBS.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -17,20 +18,15 @@ namespace IBBS
     {
         public static async Task Main(string[] args)
         {
-            Likes testlike = new Likes()
-            {
-                Like = 1,
-                Dislike = 0,
-            };
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
+
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<BurgerDbContext>();
                 var userManager = services.GetRequiredService<UserManager<Users>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                await context.AddAsync(testlike);
                 await context.SeedAsync(userManager, roleManager);
             }
             host.Run();

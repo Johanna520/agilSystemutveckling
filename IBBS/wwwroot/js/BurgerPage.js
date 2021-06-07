@@ -10,6 +10,7 @@ Thumbsup.addEventListener("click", function () {
         Likes.innerHTML = Like;
         disliked = false;
         Liked = true;
+        PostLike();
         if (Dislike <= 0) {
             return Dislike;
         } else {
@@ -31,9 +32,9 @@ Thumbsdown.addEventListener("click", function () {
     if (disliked === false) {
         Dislike += 1;
         Dislikes.innerHTML = Dislike;
-
         Liked = false;
         disliked = true;
+        PostLike();
         if (Like <= 0) {
             return Like;
         } else {
