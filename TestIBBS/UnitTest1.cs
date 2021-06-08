@@ -7,6 +7,7 @@ using IBBS.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TESTIBBS
 {
@@ -28,7 +29,7 @@ namespace TESTIBBS
                 _factory.Dispose();
             }
             [TestMethod]
-        public async void TestMethod1()
+        public async Task TestMethod1()
         {
 
             using var scope = _factory.Services.CreateScope();
@@ -39,11 +40,13 @@ namespace TESTIBBS
 {
             new KeyValuePair<string, string>("UserName", "user1"),
 });
-            Assert.IsFalse(await um.FindByNameAsync("user1") == null);
+            Assert.IsFalse(await um.FindByNameAsync("user1") != null);
             var client = _factory.CreateClient();
             var bucket = await client.PostAsync("/userlist", stringContent);
             Assert.IsTrue(bucket.IsSuccessStatusCode);
             Assert.IsTrue(await um.FindByNameAsync("user1") == null);
         }
+
+     
     }
 }
