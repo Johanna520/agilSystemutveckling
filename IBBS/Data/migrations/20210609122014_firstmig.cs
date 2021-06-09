@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace IBBS.Data.migrations
 {
-    public partial class migraioninit : Migration
+    public partial class firstmig : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -217,27 +217,6 @@ namespace IBBS.Data.migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Likes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Up = table.Column<int>(type: "int", nullable: false),
-                    Down = table.Column<int>(type: "int", nullable: false),
-                    UsersId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Likes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Likes_AspNetUsers_UsersId",
-                        column: x => x.UsersId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
                 {
@@ -259,6 +238,34 @@ namespace IBBS.Data.migrations
                     table.ForeignKey(
                         name: "FK_Comments_Burgers_BurgerId",
                         column: x => x.BurgerId,
+                        principalTable: "Burgers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Likes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Like = table.Column<int>(type: "int", nullable: false),
+                    Dislike = table.Column<int>(type: "int", nullable: false),
+                    UsersId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    BurgersId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Likes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Likes_AspNetUsers_UsersId",
+                        column: x => x.UsersId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Likes_Burgers_BurgersId",
+                        column: x => x.BurgersId,
                         principalTable: "Burgers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -289,30 +296,6 @@ namespace IBBS.Data.migrations
                         principalTable: "Ingredients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "LikesSavedHamburgers",
-                columns: table => new
-                {
-                    BurgersId = table.Column<int>(type: "int", nullable: false),
-                    LikesId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_LikesSavedHamburgers", x => new { x.BurgersId, x.LikesId });
-                    table.ForeignKey(
-                        name: "FK_LikesSavedHamburgers_Burgers_BurgersId",
-                        column: x => x.BurgersId,
-                        principalTable: "Burgers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_LikesSavedHamburgers_Likes_LikesId",
-                        column: x => x.LikesId,
-                        principalTable: "Likes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -370,14 +353,14 @@ namespace IBBS.Data.migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Likes_BurgersId",
+                table: "Likes",
+                column: "BurgersId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Likes_UsersId",
                 table: "Likes",
                 column: "UsersId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LikesSavedHamburgers_LikesId",
-                table: "LikesSavedHamburgers",
-                column: "LikesId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UseIngredient_IngredientsId",
@@ -414,16 +397,13 @@ namespace IBBS.Data.migrations
                 name: "Comments");
 
             migrationBuilder.DropTable(
-                name: "LikesSavedHamburgers");
+                name: "Likes");
 
             migrationBuilder.DropTable(
                 name: "UseIngredient");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "Likes");
 
             migrationBuilder.DropTable(
                 name: "Burgers");

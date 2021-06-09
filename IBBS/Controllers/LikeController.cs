@@ -1,6 +1,7 @@
 ﻿using IBBS.Data;
 using IBBS.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,10 +16,12 @@ namespace IBBS.Controllers
     public class LikeController : ControllerBase
     {
         private readonly BurgerDbContext _context;
+        private readonly UserManager<Users> _userManager;
 
-        public LikeController(BurgerDbContext context)
+        public LikeController(BurgerDbContext context, UserManager<Users> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -28,8 +31,11 @@ namespace IBBS.Controllers
         }
 
         [HttpPost]
-        public Likes PostLikes(Likes likes)
+        public async Task<LikesDTO> PostLikes(LikesDTO likes)
         {
+
+            //var user = await _userManager.GetUserAsync(User);
+
             _context.Add(likes);
             _context.SaveChanges();
             return likes;

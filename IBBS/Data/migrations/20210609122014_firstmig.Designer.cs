@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IBBS.Data.migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210607130056_migraioninit")]
-    partial class migraioninit
+    [Migration("20210609122014_firstmig")]
+    partial class firstmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -134,16 +134,21 @@ namespace IBBS.Data.migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Down")
+                    b.Property<int?>("BurgersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Up")
+                    b.Property<int>("Dislike")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Like")
                         .HasColumnType("int");
 
                     b.Property<string>("UsersId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BurgersId");
 
                     b.HasIndex("UsersId");
 
@@ -261,21 +266,6 @@ namespace IBBS.Data.migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("LikesSavedHamburgers", b =>
-                {
-                    b.Property<int>("BurgersId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LikesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BurgersId", "LikesId");
-
-                    b.HasIndex("LikesId");
-
-                    b.ToTable("LikesSavedHamburgers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -430,9 +420,15 @@ namespace IBBS.Data.migrations
 
             modelBuilder.Entity("IBBS.Models.Likes", b =>
                 {
+                    b.HasOne("IBBS.Models.SavedHamburgers", "Burgers")
+                        .WithMany("Likes")
+                        .HasForeignKey("BurgersId");
+
                     b.HasOne("IBBS.Models.Users", "Users")
                         .WithMany("Likes")
                         .HasForeignKey("UsersId");
+
+                    b.Navigation("Burgers");
 
                     b.Navigation("Users");
                 });
@@ -459,21 +455,6 @@ namespace IBBS.Data.migrations
                     b.Navigation("Ingredients");
 
                     b.Navigation("SavedHamburgers");
-                });
-
-            modelBuilder.Entity("LikesSavedHamburgers", b =>
-                {
-                    b.HasOne("IBBS.Models.SavedHamburgers", null)
-                        .WithMany()
-                        .HasForeignKey("BurgersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IBBS.Models.Likes", null)
-                        .WithMany()
-                        .HasForeignKey("LikesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -535,6 +516,8 @@ namespace IBBS.Data.migrations
             modelBuilder.Entity("IBBS.Models.SavedHamburgers", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Likes");
 
                     b.Navigation("UseIngredients");
                 });

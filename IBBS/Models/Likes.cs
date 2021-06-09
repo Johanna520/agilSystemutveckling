@@ -12,7 +12,15 @@ namespace IBBS.Models
         public int Like { get; set; }
         public int Dislike { get; set; }
         public Users Users { get; set; }
-        public List<SavedHamburgers> Burgers { get; set; }
+        public SavedHamburgers Burgers { get; set; }
 
+    }
+
+    public class LikesDTO
+    {
+        public int Like { get; set; }
+        public int Dislike { get; set; }
+
+        //public SavedHamburgers Burgers { get; set; }
     }
 }
