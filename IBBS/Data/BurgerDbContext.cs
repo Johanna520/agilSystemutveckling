@@ -127,7 +127,7 @@ namespace IBBS.Data
             });
             Ingredients.Add(new Ingredient()
             {
-                Name = "Hahalloumi"
+               Name = "Hallumi"
             });
             Ingredients.Add(new Ingredient()
             {
