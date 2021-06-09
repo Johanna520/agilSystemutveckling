@@ -1,8 +1,4 @@
-﻿* {
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-    font-family: "Quicksand", sans-serif;
-}
-.btnLogIn, .btnRegister {
+﻿.btnLogIn, .btnRegister {
     border: 1px black solid;
     text-align: center;
     width: 200px;
@@ -14,3 +10,13 @@
         color: #ef9015;
     }
 
+.index-cont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.text-center {
+    align-self: center;
+}

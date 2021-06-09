@@ -9,8 +9,8 @@ namespace IBBS.Models
     public class Likes
     {
         public int Id { get; set; }
-        public int Up { get; set; }
-        public int Down { get; set; }
+        public int Like { get; set; }
+        public int Dislike { get; set; }
         public Users Users { get; set; }
         public List<SavedHamburgers> Burgers { get; set; }
 

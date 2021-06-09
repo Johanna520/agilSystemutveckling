@@ -15,58 +15,90 @@
             <img class="Burgerimg BunBottom" id="BottomBun" src="/images/Burger/BottomBurg.png" alt="">
 
         </div>
+
         <div class="itemcategories">
             <div class="itemdiv">
                 <a class="Itembtn" data-toggle="collapse" href="#collapseExample1" role="button"
                    aria-expanded="false" aria-controls="collapseExample">
-                    TopBun
-                </a>
-                <a class="Itembtn" data-toggle="collapse" href="#collapseExample2" role="button"
-                   aria-expanded="false" aria-controls="collapseExample">
-                    Vegetable
+                    Top Bun
                 </a>
                 <a class="Itembtn" data-toggle="collapse" href="#collapseExample3" role="button"
                    aria-expanded="false" aria-controls="collapseExample">
-                    Vegetable
+                    Extra stuff
                 </a>
                 <a class="Itembtn" data-toggle="collapse" href="#collapseExample4" role="button"
                    aria-expanded="false" aria-controls="collapseExample">
-                    Meat
+                    Protien
                 </a>
                 <a class="Itembtn" data-toggle="collapse" href="#collapseExample5" role="button"
                    aria-expanded="false" aria-controls="collapseExample">
-                    BottomBun
+                    Bottom Bun
                 </a>
             </div>
+
             <div class="collapse insdecollapse" id="collapseExample1">
                 <div>
-                    <a class="Choicebtn " id="TopBunBtn">Topbun</a>
+                    <a class="Choicebtn " id="TopBunBtn">TopLightBun</a>
                 </div>
                 <div>
-                    <a class="Choicebtn" id="TopBunBtn">Topbun</a>
+                    <a class="Choicebtn " id="TopBunBtn">SalladBunTop</a>
                 </div>
-            </div>
-            <div class="collapse insdecollapse" id="collapseExample2">
                 <div>
-                    <a class="Choicebtn" id="SalladBtn">Sallad</a>
+                    <a class="Choicebtn " id="TopBunBtn">TopBunDark</a>
                 </div>
             </div>
             <div class="collapse insdecollapse" id="collapseExample3">
                 <div>
+                    <a class="Choicebtn" id="SalladBtn">Sallad</a>
+                </div>
+                <div>
                     <a class="Choicebtn" id="TomatoBtn">Tomato</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="TomatoBtn">Avocado</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="TomatoBtn">Sallad</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="TomatoBtn">Onion</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="TomatoBtn">Cucumber</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="MeatBtn">Bacon</a>
                 </div>
             </div>
             <div class="collapse insdecollapse" id="collapseExample4">
                 <div>
-                    <a class="Choicebtn" id="MeatBtn">GroundBeef</a>
+                    <a class="Choicebtn" id="MeatBtn">Beef</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="MeatBtn">Hahalloumi</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="MeatBtn">Chicken</a>
                 </div>
             </div>
             <div class="collapse insdecollapse" id="collapseExample5">
                 <div>
-                    <a class="Choicebtn" id="BottomBunBtn">Bottombun</a>
+                    <a class="Choicebtn" id="BottomBunBtn">BottomLightBun</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="BottomBunBtn">SalladBunBottom</a>
+                </div>
+                <div>
+                    <a class="Choicebtn" id="BottomBunBtn">BottomBunDark</a>
                 </div>
             </div>
         </div>
     </div>
+    <ol>
+        @foreach (var item in Model.Ingredients)
+        {
+            <li>@item.Name</li>
 
+        }
+    </ol>
 </div>

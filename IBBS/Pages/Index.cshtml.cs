@@ -5,21 +5,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.EntityFrameworkCore;
+using IBBS.Models;
+using IBBS.Data;
+
 
 namespace IBBS.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly BurgerDbContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
-        public void OnGet()
+        public IndexModel(BurgerDbContext context)
         {
 
+            _context = context;
         }
+
+        public void OnGet() {
+
+        }
+
     }
 }

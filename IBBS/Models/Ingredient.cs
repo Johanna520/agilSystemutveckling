@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace IBBS.Models
 {
-    public class SavedHamburgers
+    public class Ingredient 
     {
         public int Id { get; set; }
-        public List<Likes> Likes { get; set; }
-        public Users User { get; set; }
-        public List<Comments> Comments { get; set; }
+        public string Name { get; set; }
         public List<UseIngredient> UseIngredients { get; set; }
+
     }
 }

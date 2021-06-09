@@ -1,21 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IBBS.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using IBBS.Data;
+using IBBS.Models;
 
 namespace IBBS.Pages
 {
-    [Authorize]
-    public class CreateBurgerModel : PageModel
+    public class ListModel : PageModel
     {
-        private readonly IBBS.Data.BurgerDbContext _context;
+        private readonly BurgerDbContext _context;
 
-        public CreateBurgerModel(IBBS.Data.BurgerDbContext context)
+        public ListModel(BurgerDbContext context)
         {
             _context = context;
         }
@@ -26,6 +25,5 @@ namespace IBBS.Pages
         {
             Ingredients = await _context.Ingredients.ToListAsync();
         }
-
     }
 }
