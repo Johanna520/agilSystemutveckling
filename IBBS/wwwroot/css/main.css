@@ -29,6 +29,7 @@
         color: #ef9015;
     }
 
+
 /**/
 .main-container {
     height: 100vh;
@@ -38,6 +39,10 @@
 .RenderBody {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .outside-box {
@@ -222,3 +227,122 @@
         color: #ef9015 !important;
     }
 /*End Create Burger page*/
+
+/*Start UserList page*/
+.headerDiv{
+    position:relative;
+    top: 7%;
+    width: 100%;
+}
+
+.headerDiv > h2{
+    display: inline-block;
+}
+
+#name {
+    position: absolute;
+    left: 5%;
+}
+
+#email {
+    position: absolute;
+    left: 25%;
+}
+
+.bodyDiv {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    height: 100%;
+}
+
+.myButton {
+    border: 1px black solid;
+    text-align: center;
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+}
+
+    .myButton:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
+
+.userInfo{
+    display: inline-block;
+    position:absolute;
+}
+
+#userName{
+    left: 5%;
+    width: 20%;
+    word-wrap: break-word;
+}
+
+#userEmail {
+    left: 25%;
+    width: 20%;
+    word-wrap: break-word;
+}
+
+#giveAdminbtn{
+    left: 50%;
+    width: 13%
+}
+
+#banbtn {
+    left: 65%;
+    width: 13%
+}
+
+#removeAccountbtn {
+    left: 80%;
+    width: 13%;
+}
+
+#removeAccBtn{
+    background-color: red;
+}
+
+#removeAccBtn:hover {
+    background-color: #33342d;
+    color: #ef9015 !important;
+}
+
+.searchDiv{
+    position:relative;
+    width: 100%;
+}
+
+.searchBtn {
+    width: 12%;
+}
+
+.searchBar{
+    position:absolute;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    top: 8%;
+}
+
+.searchInput {
+    width: 25%;
+    border-radius: 15px;
+    outline: none;
+}
+
+.titleDiv {
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+
+#titleh1 {
+    position: absolute;
+    left: 5%;
+}
+
+/*End UserList page*/
