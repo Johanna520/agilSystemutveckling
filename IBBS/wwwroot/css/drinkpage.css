@@ -1,9 +1,8 @@
-﻿.drink-container {
-    width: 100vw;
-    height: 100vh;
+﻿
+.card-body {
+
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 .card-container {
     width: 250px;
@@ -50,3 +49,21 @@
     color: #ef9015;
     transform: rotateY(180deg);
 }
+
+.drinkBtn {
+    margin: 100px !important;
+    text-align: center;
+
+}
+
+.softDrinkBtn, .juiceBtn, .sparklingBtn, .otherDrinksBtn {
+    width: 200px;
+    border-radius: 15px;
+    padding: 10px !important;
+    margin: 10px !important;
+}
+
+    .softDrinkBtn:hover, .juiceBtn:hover, .sparklingBtn:hover, .otherDrinksBtn:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
