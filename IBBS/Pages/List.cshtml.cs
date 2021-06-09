@@ -12,9 +12,9 @@ namespace IBBS.Pages
 {
     public class ListModel : PageModel
     {
-        private readonly IBBS.Data.BurgerDbContext _context;
+        private readonly BurgerDbContext _context;
 
-        public ListModel(IBBS.Data.BurgerDbContext context)
+        public ListModel(BurgerDbContext context)
         {
             _context = context;
         }

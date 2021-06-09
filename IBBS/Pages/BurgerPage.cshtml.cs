@@ -25,8 +25,6 @@ namespace IBBS.Pages
             _userManager = userManager;
         }
 
-        //Hämtar en lista med komentarer, detta för att kunna visa samtliga kommentarer. Inte irkigt klar med hur
-        // den ska se ut i cshtml-koden men är "under construction". 
         public List<Comments> commentList { get; set; }
         public async Task OnGetAsync(int? id)
         {

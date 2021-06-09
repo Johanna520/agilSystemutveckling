@@ -88,9 +88,6 @@ namespace IBBS.Data
                 await userManager.AddToRoleAsync(userRoles, "User");
             }
 
-
-
-
             await SaveChangesAsync();
 
         }

@@ -22,7 +22,6 @@ namespace IBBS
 
             using (var scope = host.Services.CreateScope())
             {
-
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<BurgerDbContext>();
                 var userManager = services.GetRequiredService<UserManager<Users>>();
@@ -31,8 +30,6 @@ namespace IBBS
             }
             host.Run();
         }
-
-
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
