@@ -6,16 +6,16 @@
     /* border: 1px black solid; */
     justify-self: center;
     align-self: center;
-    width: 600px;
-    height: 600px;
+    width: 450px;
+    height: 450px;
     background-color: #e3e8e5;
     margin: 40px 40px !important;
 }
 
 .carousel-inner {
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
 }
 
 .carousel-item {
@@ -57,3 +57,31 @@
     align-content: center;
     margin: 0 90px !important;
 }
+
+.comment-container{
+    width: 90%;
+    text-align: center;
+ 
+}
+
+.commentSection {
+    overflow: auto;
+    border: 1px black solid;
+    max-width: auto;
+    height: 100px;
+}
+.btnComment {
+    border: 1px black solid;
+    text-align: center;
+    width: 150px;
+    border-radius: 10px;
+    margin: 10px 10px !important;
+    color: black;
+    padding: 5px !important;
+    align-self: center;
+}
+
+    .btnComment:hover {
+        background-color: #33342d;
+        color: #ef9015;
+    }
