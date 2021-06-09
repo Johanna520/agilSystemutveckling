@@ -4,16 +4,14 @@ using IBBS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IBBS.Data.Migrations
+namespace IBBS.Data.migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210602114824_bugeritemsmigrationlist")]
-    partial class bugeritemsmigrationlist
+    partial class BurgerDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +50,7 @@ namespace IBBS.Data.Migrations
                     b.Property<int>("Cucumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("Hahalloumi")
+                    b.Property<int>("Hallumi")
                         .HasColumnType("int");
 
                     b.Property<int>("Ketchup")
@@ -112,6 +110,21 @@ namespace IBBS.Data.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("IBBS.Models.Ingredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ingredients");
+                });
+
             modelBuilder.Entity("IBBS.Models.Likes", b =>
                 {
                     b.Property<int>("Id")
@@ -142,19 +155,39 @@ namespace IBBS.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("SavedHamburgersId")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SavedHamburgersId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Burgers");
+                });
+
+            modelBuilder.Entity("IBBS.Models.UseIngredient", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IngredientsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SavedHamburgersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IngredientsId");
+
+                    b.HasIndex("SavedHamburgersId");
+
+                    b.ToTable("UseIngredient");
                 });
 
             modelBuilder.Entity("IBBS.Models.Users", b =>
@@ -404,15 +437,26 @@ namespace IBBS.Data.Migrations
 
             modelBuilder.Entity("IBBS.Models.SavedHamburgers", b =>
                 {
-                    b.HasOne("IBBS.Models.SavedHamburgers", null)
-                        .WithMany("Ingredients")
-                        .HasForeignKey("SavedHamburgersId");
-
                     b.HasOne("IBBS.Models.Users", "User")
                         .WithMany("Burgers")
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IBBS.Models.UseIngredient", b =>
+                {
+                    b.HasOne("IBBS.Models.Ingredient", "Ingredients")
+                        .WithMany("UseIngredients")
+                        .HasForeignKey("IngredientsId");
+
+                    b.HasOne("IBBS.Models.SavedHamburgers", "SavedHamburgers")
+                        .WithMany("UseIngredients")
+                        .HasForeignKey("SavedHamburgersId");
+
+                    b.Navigation("Ingredients");
+
+                    b.Navigation("SavedHamburgers");
                 });
 
             modelBuilder.Entity("LikesSavedHamburgers", b =>
@@ -481,11 +525,16 @@ namespace IBBS.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("IBBS.Models.Ingredient", b =>
+                {
+                    b.Navigation("UseIngredients");
+                });
+
             modelBuilder.Entity("IBBS.Models.SavedHamburgers", b =>
                 {
                     b.Navigation("Comments");
 
-                    b.Navigation("Ingredients");
+                    b.Navigation("UseIngredients");
                 });
 
             modelBuilder.Entity("IBBS.Models.Users", b =>

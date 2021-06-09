@@ -1,3 +1,4 @@
+using IBBS.Controllers;
 using IBBS.Data;
 using IBBS.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -29,8 +30,6 @@ namespace IBBS
             }
             host.Run();
         }
-
-
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="~/css/sidebar.css" />
     <link rel="stylesheet" href="~/css/Index.css" />
     <link rel="stylesheet" href="~/css/burgerpage.css" />
+    <link rel="stylesheet" href="~/css/listtoimages.css" />
     <link rel="stylesheet" href="~/css/drinkpage.css" />
 </head>
 <body>
     <div class="main-container">
         <div class="sidebar-cont">
+
 
 
             @if (SignInManager.IsSignedIn(User))
@@ -33,6 +35,10 @@
                     <a class="navbtn" asp-page="/DrinkPage">DRINKS</a>
                     <a class="navbtn" href="">DESERT</a>
                     <a class="navbtn" href="">SIDE DISH</a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="navbtn" id="userList" href="/UserList">USER LIST</a>
+                    }
                 </div>
             }
 
@@ -59,6 +65,7 @@
         </div>
     </div>
     <script src="~/js/burger.js"></script>
+    <script src="~/js/UserList.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
