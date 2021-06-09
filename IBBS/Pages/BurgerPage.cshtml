@@ -54,41 +54,34 @@
 </div>
 <script src="/js/LikeAPI.js"></script>
 <script src="~/js/BurgerPage.js"></script>
-<br />
-<br />
-<table class"table">
-    <thead>
-        <tr>
-            <td>
-                Comments
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.commentList)
-        {
-<tr>
-    <td>
-        @item.Comment
-    </td>
-</tr>
-       }
-        <tr>
+
+<div class="comment-container">
+    <form method="post">
+            <label asp-for="newComment.Comment" class="control-label">Give your feedback!</label>
+            <input asp-for="newComment.Comment" class="form-control" />
+            <span asp-validation-for="newComment.Comment" class="btnCommentSpan"></span>    
+        <div class="comment">
+            <input type="submit" value="Create" class="btnComment" />
+        </div>
+    </form>
+    
+    <div class="commentSection">
+        <table class="table">
+               
+                <tbody>
+                    @foreach (var item in Model.commentList)
+                    {
+                        <tr>
+                            <td>
+                                @item.Comment
+                            </td>
+                        </tr>
+                    }
+                </tbody>          
+           
+        </table>
+    </div>
+</div>
 
 
-            <form method="post">
-                <div class="theComment">
-                    <label asp-for="newComment.Comment" class="control-label"></label>
-                    <input asp-for="newComment.Comment" class="form-control" />
-                    <span asp-validation-for="newComment.Comment" class="btnComment"></span>
 
-                </div>
-                <br />
-                <div class="comment">
-                    <input type="submit" value="Create" class="btnComment" />
-                </div>
-
-            </form>
-        </tr>
-    </tbody>
-</table>
