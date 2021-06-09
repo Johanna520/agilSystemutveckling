@@ -41,7 +41,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px red solid;
     justify-content: center;
     align-items: center;
 }
@@ -233,6 +232,7 @@
 .headerDiv{
     position:relative;
     top: 7%;
+    width: 100%;
 }
 
 .headerDiv > h2{
@@ -252,6 +252,8 @@
 .bodyDiv {
     position: relative;
     top: 20%;
+    width: 100%;
+    height: 100%;
 }
 
 .myButton {
@@ -259,6 +261,7 @@
     text-align: center;
     width: 100%;
     border-radius: 15px;
+    outline: none;
 }
 
     .myButton:hover {
@@ -305,6 +308,41 @@
 #removeAccBtn:hover {
     background-color: #33342d;
     color: #ef9015 !important;
+}
+
+.searchDiv{
+    position:relative;
+    width: 100%;
+}
+
+.searchBtn {
+    width: 12%;
+}
+
+.searchBar{
+    position:absolute;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    top: 8%;
+}
+
+.searchInput {
+    width: 25%;
+    border-radius: 15px;
+    outline: none;
+}
+
+.titleDiv {
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+
+#titleh1 {
+    position: absolute;
+    left: 5%;
 }
 
 /*End UserList page*/
