@@ -66,7 +66,7 @@ namespace IBBS.Data
 
             await userManager.AddToRoleAsync(adminRole, "Admin"); //Assign roles
             await userManager.AddToRoleAsync(userRole, "User");
-
+            await AddBurgerItems();
 
 
             for (int i = 0; i < 10; i++)
@@ -124,7 +124,7 @@ namespace IBBS.Data
             });
             Ingredients.Add(new Ingredient()
             {
-               Name = "Hallumi"
+                Name = "Hallumi"
             });
             Ingredients.Add(new Ingredient()
             {
