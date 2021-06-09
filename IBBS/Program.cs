@@ -1,3 +1,4 @@
+using IBBS.Controllers;
 using IBBS.Data;
 using IBBS.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +22,7 @@ namespace IBBS
 
             using (var scope = host.Services.CreateScope())
             {
+
                 var services = scope.ServiceProvider;
                 var context = services.GetRequiredService<BurgerDbContext>();
                 var userManager = services.GetRequiredService<UserManager<Users>>();

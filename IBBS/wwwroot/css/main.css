@@ -29,6 +29,7 @@
         color: #ef9015;
     }
 
+
 /**/
 .main-container {
     height: 100vh;
@@ -38,6 +39,11 @@
 .RenderBody {
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
+    justify-content: center;
+    align-items: center;
 }
 
 .outside-box {
