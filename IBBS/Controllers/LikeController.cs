@@ -22,6 +22,7 @@ namespace IBBS.Controllers
         {
             _context = context;
             _userManager = userManager;
+
         }
 
         [HttpGet]
