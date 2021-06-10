@@ -40,18 +40,22 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+
+
 <div id="likes" class="container">
     <div class="row justify-content-md-center">
         <div class="col-lg-2">
-            <span id="Likes">0</span>
             <img class="thumbspic thumbsup" id="thumbsup" src="~/images/Tummeup.png" />
+            <span id="Likes">@Model.likes[0].Like</span>
         </div>
         <div class="col-lg-2">
             <img class="thumbspic thumbdown" id="thumbsdown" src="~/images/Tummener.png" />
-            <span id="dislikes">0</span>
+            <span id="dislikes"></span>
         </div>
     </div>
 </div>
+
+
 <script src="/js/LikeAPI.js"></script>
 <script src="~/js/BurgerPage.js"></script>
 <br />
@@ -67,12 +71,12 @@
     <tbody>
         @foreach (var item in Model.commentList)
         {
-<tr>
-    <td>
-        @item.Comment
-    </td>
-</tr>
-       }
+            <tr>
+                <td>
+                    @item.Comment
+                </td>
+            </tr>
+        }
         <tr>
 
 

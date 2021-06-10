@@ -26,18 +26,20 @@ namespace IBBS.Pages
         }
 
         public List<Comments> commentList { get; set; }
+        public List<Likes> likes { get; set; }
         public async Task OnGetAsync(int? id)
         {
             if (id != null)
             {
                 var commentList = await _context.Comments.FindAsync(id);
+                var Likeslist = await _context.Likes.FindAsync(id);
 
-
+                _context.Update(Likeslist);
                 _context.Update(commentList);
                 await _context.SaveChangesAsync();
             }
-
             commentList = await _context.Comments.ToListAsync();
+            likes = await _context.Likes.ToListAsync();
         }
 
         [BindProperty]

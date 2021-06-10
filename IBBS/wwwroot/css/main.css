@@ -147,7 +147,7 @@
     max-height: 80%;
     position: absolute;
     align-self: center;
-    display: none;
+    display: initial;
 }
 
 .BunTop {
@@ -229,15 +229,15 @@
 /*End Create Burger page*/
 
 /*Start UserList page*/
-.headerDiv{
-    position:relative;
+.headerDiv {
+    position: relative;
     top: 7%;
     width: 100%;
 }
 
-.headerDiv > h2{
-    display: inline-block;
-}
+    .headerDiv > h2 {
+        display: inline-block;
+    }
 
 #name {
     position: absolute;
@@ -269,12 +269,12 @@
         color: #ef9015;
     }
 
-.userInfo{
+.userInfo {
     display: inline-block;
-    position:absolute;
+    position: absolute;
 }
 
-#userName{
+#userName {
     left: 5%;
     width: 20%;
     word-wrap: break-word;
@@ -286,7 +286,7 @@
     word-wrap: break-word;
 }
 
-#giveAdminbtn{
+#giveAdminbtn {
     left: 50%;
     width: 13%
 }
@@ -301,17 +301,17 @@
     width: 13%;
 }
 
-#removeAccBtn{
+#removeAccBtn {
     background-color: red;
 }
 
-#removeAccBtn:hover {
-    background-color: #33342d;
-    color: #ef9015 !important;
-}
+    #removeAccBtn:hover {
+        background-color: #33342d;
+        color: #ef9015 !important;
+    }
 
-.searchDiv{
-    position:relative;
+.searchDiv {
+    position: relative;
     width: 100%;
 }
 
@@ -319,8 +319,8 @@
     width: 12%;
 }
 
-.searchBar{
-    position:absolute;
+.searchBar {
+    position: absolute;
     display: block;
     padding-top: 30px;
     text-align: center;

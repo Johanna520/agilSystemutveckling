@@ -34,12 +34,15 @@ namespace IBBS.Controllers
         public async Task<LikesDTO> PostLikes(LikesDTO LikesDTO)
         {
             var user = await _userManager.GetUserAsync(User);
+            SavedHamburgers burger = new SavedHamburgers();
 
             Likes likes = new Likes()
             {
                 Dislike = LikesDTO.Dislike,
                 Like = LikesDTO.Like,
                 Users = user,
+                Burgers = burger
+
             };
 
             _context.Add(likes);
