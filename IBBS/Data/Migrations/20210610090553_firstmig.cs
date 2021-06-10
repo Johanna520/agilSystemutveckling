@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace IBBS.Data.migrations
+namespace IBBS.Data.Migrations
 {
     public partial class firstmig : Migration
     {

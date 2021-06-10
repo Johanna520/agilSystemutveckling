@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IBBS.Data.migrations
+namespace IBBS.Data.Migrations
 {
     [DbContext(typeof(BurgerDbContext))]
     partial class BurgerDbContextModelSnapshot : ModelSnapshot

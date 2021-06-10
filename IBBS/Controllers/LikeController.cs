@@ -31,10 +31,10 @@ namespace IBBS.Controllers
         }
 
         [HttpPost]
-        public async Task<LikesDTO> PostLikes(LikesDTO likes)
+        public async Task<Likes> PostLikes(Likes likes)
         {
-
-            //var user = await _userManager.GetUserAsync(User);
+            var user = await _userManager.GetUserAsync(User);
+            likes.Users = user;
 
             _context.Add(likes);
             _context.SaveChanges();

@@ -16,7 +16,7 @@ function PostLike() {
     fetch("https://localhost:44363/api/Like", {
         method: "POST",
         body: JSON.stringify(_data),
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
     })
         .then((_data) => {
             console.log("Success:", _data);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,7 +21,9 @@ namespace IBBS.Models
     {
         public int Like { get; set; }
         public int Dislike { get; set; }
-
-        //public SavedHamburgers Burgers { get; set; }
+        public SavedHamburgers Burgers { get; set; }
     }
+
+
 }
+

@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IBBS.Data.migrations
+namespace IBBS.Data.Migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210609122014_firstmig")]
+    [Migration("20210610090553_firstmig")]
     partial class firstmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
