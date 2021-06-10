@@ -21,9 +21,7 @@ namespace IBBS.Models
     {
         public int Like { get; set; }
         public int Dislike { get; set; }
-        public SavedHamburgers Burgers { get; set; }
     }
-
 
 }
 

@@ -63,7 +63,6 @@ namespace IBBS.Data
             var adminRole = await Users.Where(u => u.Email == "Admin@hotmail.com").FirstOrDefaultAsync();
             var userRole = await Users.Where(u => u.Email == "User@hotmail.com").FirstOrDefaultAsync();
 
-
             await userManager.AddToRoleAsync(adminRole, "Admin"); //Assign roles
             await userManager.AddToRoleAsync(userRole, "User");
             await AddBurgerItems();
