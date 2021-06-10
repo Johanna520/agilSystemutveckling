@@ -26,7 +26,7 @@ namespace IBBS
                 var context = services.GetRequiredService<BurgerDbContext>();
                 var userManager = services.GetRequiredService<UserManager<Users>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                await context.SeedAsync(userManager, roleManager);
+                //await context.SeedAsync(userManager, roleManager);
             }
             host.Run();
         }
