@@ -23,30 +23,49 @@ namespace TESTIBBS
 
             }
 
-            [ClassCleanup]
-            public static void ClassCleanupTest()
-            {
-                _factory.Dispose();
-            }
-            [TestMethod]
+
+
+        [ClassCleanup]
+        public static void ClassCleanupTest()
+        {
+            _factory.Dispose();
+        }
+
+        private IServiceScope _scope;
+
+        //private BurgerDbContext DB;
+        private UserManager<Users> user;
+        private HttpClient client;
+
+        [TestInitialize]
+        public void InitTests()
+
+        {
+            _scope = _factory.Services.CreateScope();
+           // DB = _scope.ServiceProvider.GetRequiredService<BurgerDbContext>();
+            user = _scope.ServiceProvider.GetRequiredService<UserManager<Users>>();
+            client = _factory.CreateClient();
+        }
+
+
+        [TestMethod]
         public async Task TestMethod1()
         {
 
-            using var scope = _factory.Services.CreateScope();
-            var db = scope.ServiceProvider.GetRequiredService<BurgerDbContext>();
-            var um = scope.ServiceProvider.GetRequiredService<UserManager<Users>>();
+            var values = new List<KeyValuePair<string, string>>();
+            values.Add(new KeyValuePair<string, string>("UserName", "User"));
 
-            var stringContent = new FormUrlEncodedContent(new[]
-{
-            new KeyValuePair<string, string>("UserName", "user1"),
-});
-            Assert.IsFalse(await um.FindByNameAsync("user1") != null);
-            var client = _factory.CreateClient();
+            var stringContent = new FormUrlEncodedContent(values);
+
+
+            Assert.IsFalse(await user.FindByNameAsync("User") != null);
+
             var bucket = await client.PostAsync("/userlist", stringContent);
+
             Assert.IsTrue(bucket.IsSuccessStatusCode);
-            Assert.IsTrue(await um.FindByNameAsync("user1") == null);
+
+            Assert.IsTrue(await user.FindByNameAsync("User") == null);
         }
 
-     
     }
 }
