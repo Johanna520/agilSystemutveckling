@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IBBS.Data.Migrations
 {
     [DbContext(typeof(BurgerDbContext))]
-    [Migration("20210610090553_firstmig")]
+    [Migration("20210610125107_firstmig")]
     partial class firstmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
