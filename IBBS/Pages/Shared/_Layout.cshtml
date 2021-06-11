@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity
 @inject SignInManager<Models.Users> SignInManager
 @inject UserManager<Models.Users> UserManager
 
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/css/burgerpage.css" />
     <link rel="stylesheet" href="~/css/listtoimages.css" />
     <link rel="stylesheet" href="~/css/drinkpage.css" />
+    <link rel="stylesheet" href="~/css/sidedish.css" />
     <link rel="stylesheet" href="~/css/desertpage.css" />
 </head>
 <body>
@@ -34,6 +35,8 @@
                     <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>
                     <a class="navbtn" asp-page="/BurgerPage">YOUR BURGERS</a>
                     <a class="navbtn" asp-page="/DrinkPage">DRINKS</a>
+                    <a class="navbtn" href="">DESERT</a>
+                    <a class="navbtn" asp-page="/SideDishPage">SIDE DISH</a>
                     <a class="navbtn" asp-page="/DesertPage">DESERT</a>
                     <a class="navbtn" href="">SIDE DISH</a>
                     @if (User.IsInRole("Admin"))
@@ -55,6 +58,8 @@
                     <a class="navbtn" asp-page="/CreateBurger">CREATE A HAMBURGER</a>
                     <a class="navbtn" asp-page="/BurgerPage">YOUR BURGERS</a>
                     <a class="navbtn" asp-page="/DrinkPage">DRINKS</a>
+                    <a class="navbtn" href="">DESERT</a>
+                    <a class="navbtn" asp-page="/SideDishPage">SIDE DISH</a>
                     <a class="navbtn" asp-page="/DesertPage">DESERT</a>
                     <a class="navbtn" href="">SIDE DISH</a>
                 </div>
