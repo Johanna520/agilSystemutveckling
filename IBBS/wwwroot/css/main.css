@@ -147,7 +147,7 @@
     max-height: 80%;
     position: absolute;
     align-self: center;
-    display: none;
+    display: initial;
 }
 
 .BunTop {
