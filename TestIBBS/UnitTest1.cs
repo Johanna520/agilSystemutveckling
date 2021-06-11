@@ -67,5 +67,39 @@ namespace TESTIBBS
             Assert.IsTrue(await user.FindByNameAsync("User") == null);
         }
 
+
+
+        //två simpla test för att se att properties sätts rätt samt 
+        // vad som händer om vi skickar in Null i FirstName. 
+
+        [TestMethod]      
+        public void UserTest()
+        {
+            Users user = new Users()
+            { 
+            FirstName = "Pelle",
+            LastName = "Svensson"
+            };
+
+
+            Assert.AreEqual("Pelle", user.FirstName); //kontrollerar om värdern är lika
+            Assert.AreEqual("Svensson", user.LastName); //kontrollerar om värdern är lika
+        }
+
+        [TestMethod]
+
+        public void UserTest_is_null()
+        {
+            Users user = new Users()
+            {
+                FirstName = null,
+                LastName = "Svensson"
+            };
+
+            Assert.IsNull(user.FirstName); //kontrollerar om värdet är NULL.
+
+            Assert.AreEqual("Svensson", user.LastName); //kontrollerar om värdern är lika
+
+        }
     }
 }
